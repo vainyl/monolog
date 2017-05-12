@@ -42,22 +42,23 @@ class MonologCompilerPass extends AbstractCompilerPass
         $loggers = $container->findTaggedServiceIds('logger');
         foreach ($loggers as $loggerId => $tags) {
             foreach ($tags as $attributes) {
-                if (false === array_key_exists('channel', $attributes)) {
-                    throw new MissingRequiredFieldException($container, $loggerId, $attributes, 'channel');
-                }
-                $channel = $attributes['channel'];
                 $loggerDefinition = $container->findDefinition($loggerId);
                 if (false === $loggerDefinition->isSynthetic()) {
                     continue;
                 }
+                if (false === array_key_exists('channel', $attributes)) {
+                    throw new MissingRequiredFieldException($container, $loggerId, $attributes, 'channel');
+                }
+                $channel = $attributes['channel'];
 
                 $monologInstance = new DefinitionDecorator('monolog.instance.abstract');
                 $monologInstance->setArguments([$channel]);
                 $container->setDefinition('monolog.instance.' . $channel, $monologInstance);
 
-                $loggerDefinition = new DefinitionDecorator('monolog.abstract');
-                $loggerDefinition->setArguments([new Reference('monolog.instance.' . $channel)]);
-                $container->setDefinition($loggerId, $loggerDefinition);
+                $newDefinition = new DefinitionDecorator('monolog.abstract');
+                $newDefinition->setTags($loggerDefinition->getTags());
+                $newDefinition->setArguments([new Reference('monolog.instance.' . $channel)]);
+                $container->setDefinition($loggerId, $newDefinition);
             }
         }
     }
