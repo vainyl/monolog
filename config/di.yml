@@ -4,8 +4,8 @@ services:
   monolog.instance.abstract:
     abstract: true
     class: Monolog\Logger
+    calls:
+      - [setFormatter, ['@monolog.formatter']]
   monolog.abstract:
     abstract: true
     class: Vainyl\Monolog\MonologLogger
-    calls:
-      - [setFormatter, ['@monolog.formatter']]

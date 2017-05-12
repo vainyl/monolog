@@ -31,7 +31,9 @@ class MonologExtension extends AbstractExtension
         ContainerBuilder $container,
         EnvironmentInterface $environment = null
     ): AbstractExtension {
-        $container->addCompilerPass(new MonologCompilerPass());
+        $container
+            ->addCompilerPass(new MonologLoggerCompilerPass())
+            ->addCompilerPass(new MonologLoggerCompilerPass());
 
         return parent::load($configs, $container, $environment);
     }

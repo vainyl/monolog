@@ -20,11 +20,11 @@ use Vainyl\Core\Exception\MissingRequiredServiceException;
 use Vainyl\Core\Extension\AbstractCompilerPass;
 
 /**
- * Class MonologCompilerPass
+ * Class MonologLoggerCompilerPass
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-class MonologCompilerPass extends AbstractCompilerPass
+class MonologLoggerCompilerPass extends AbstractCompilerPass
 {
     /**
      * @inheritDoc
