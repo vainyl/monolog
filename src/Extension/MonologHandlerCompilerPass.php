@@ -33,7 +33,7 @@ class MonologHandlerCompilerPass extends AbstractCompilerPass
             throw new MissingRequiredServiceException($container, 'monolog.formatter');
         }
 
-        $handlers = $container->findTaggedServiceIds('logger.handler');
+        $handlers = $container->findTaggedServiceIds('logger.handler.monolog');
         foreach ($handlers as $handlerId => $tags) {
             $loggerDefinition = $container->findDefinition($handlerId);
             $loggerDefinition->addMethodCall('setFormatter', [new Reference('monolog.formatter')]);
