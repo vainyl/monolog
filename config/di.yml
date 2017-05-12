@@ -1,6 +1,6 @@
 services:
   monolog.formatter:
-    class: Vain\Logger\Monolog\MonologLineFormatter
+    class: Vainyl\Monolog\MonologLineFormatter
   logger.abstract:
     abstract: true
     calls:

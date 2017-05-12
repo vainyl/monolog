@@ -10,7 +10,7 @@
  */
 declare(strict_types = 1);
 
-namespace Vain\Logger\Monolog;
+namespace Vainyl\Monolog;
 
 use Monolog\Formatter\LineFormatter;
 

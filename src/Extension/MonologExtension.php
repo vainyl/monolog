@@ -10,7 +10,7 @@
  */
 declare(strict_types=1);
 
-namespace Vain\Logger\Extension;
+namespace Vainyl\Monolog\Extension;
 
 use Vainyl\Core\Extension\AbstractExtension;
 
