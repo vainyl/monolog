@@ -1,0 +1,9 @@
+services:
+  monolog.formatter:
+    class: Vainyl\Monolog\MonologLineFormatter
+  monolog.instance.abstract:
+    abstract: true
+    class: Monolog\Logger
+  monolog.abstract:
+    abstract: true
+    class: Vainyl\Monolog\MonologLogger
