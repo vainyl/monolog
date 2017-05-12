@@ -5,3 +5,5 @@ services:
     abstract: true
     calls:
       - [setFormatter, ['@monolog.formatter']]
+    tags:
+      - {name: logger}
