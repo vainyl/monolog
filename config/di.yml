@@ -1,9 +1,7 @@
 services:
   monolog.formatter:
     class: Vainyl\Monolog\MonologLineFormatter
-  logger.abstract:
+  monolog.abstract:
     abstract: true
     calls:
       - [setFormatter, ['@monolog.formatter']]
-    tags:
-      - {name: logger}
