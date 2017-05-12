@@ -1,14 +1,4 @@
-parameters:
-  logger.channel.app: 'app'
-
 services:
-  logger.app:
-    parent: logger.abstract
-    class: Vain\Logger\Monolog\MonologLogger
-    arugments: ['@monolog.logger.app']
-  monolog.logger.app:
-    class: Monolog\Logger
-    arguments: ['%logger.channel.app%']
   monolog.formatter:
     class: Vain\Logger\Monolog\MonologLineFormatter
   logger.abstract:
