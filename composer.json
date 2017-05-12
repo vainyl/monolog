@@ -1,0 +1,29 @@
+{
+    "name": "vainyl/monolog",
+    "type": "shared-package",
+    "authors": [
+        {
+            "name": "Taras Girnyk",
+            "email": "taras.p.gyrnik@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vainyl\\Monolog\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "psr/log": "^1",
+        "psr/http-message": "^1",
+        "vainyl/core": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://satis.vainyl.com:444"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
