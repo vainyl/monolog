@@ -12,14 +12,14 @@ declare(strict_types=1);
 
 namespace Vainyl\Monolog\Extension;
 
-use Vainyl\Core\Extension\AbstractExtension;
+use Vainyl\Core\Extension\AbstractFrameworkExtension;
 
 /**
  * Class MonologExtension
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-class MonologExtension extends AbstractExtension
+class MonologExtension extends AbstractFrameworkExtension
 {
 
     /**
