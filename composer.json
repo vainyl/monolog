@@ -1,5 +1,5 @@
 {
-    "name": "vainyl/monolog",
+    "name": "vainyl/monolog-bridge",
     "type": "shared-package",
     "authors": [
         {
@@ -17,7 +17,8 @@
         "psr/log": "^1",
         "psr/http-message": "^1",
         "monolog/monolog" : "^1",
-        "vainyl/core": "dev-master"
+        "vainyl/core": "dev-master",
+        "vainyl/logger": "dev-master"
     },
     "repositories": [
         {
