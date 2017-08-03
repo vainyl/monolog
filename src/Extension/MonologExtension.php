@@ -21,7 +21,6 @@ use Vainyl\Core\Extension\AbstractFrameworkExtension;
  */
 class MonologExtension extends AbstractFrameworkExtension
 {
-
     /**
      * @inheritDoc
      */
