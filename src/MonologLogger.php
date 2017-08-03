@@ -8,7 +8,7 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://github.com/allflame/vain-logger
  */
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Vainyl\Monolog;
 
@@ -23,7 +23,6 @@ use Vainyl\Logger\DynamicLoggerInterface;
  */
 class MonologLogger implements DynamicLoggerInterface
 {
-
     private $originalLevels = [];
 
     private $monologInstance;
@@ -113,7 +112,7 @@ class MonologLogger implements DynamicLoggerInterface
     /**
      * @inheritDoc
      */
-    public function addHandler($handler) : DynamicLoggerInterface
+    public function addHandler($handler): DynamicLoggerInterface
     {
         $this->monologInstance->pushHandler($handler);
 
@@ -123,7 +122,7 @@ class MonologLogger implements DynamicLoggerInterface
     /**
      * @inheritDoc
      */
-    public function overrideLevel($level) : DynamicLoggerInterface
+    public function overrideLevel($level): DynamicLoggerInterface
     {
         /**
          * @var AbstractHandler[] $handlers
@@ -141,7 +140,7 @@ class MonologLogger implements DynamicLoggerInterface
     /**
      * @inheritDoc
      */
-    public function restoreLevel() : DynamicLoggerInterface
+    public function restoreLevel(): DynamicLoggerInterface
     {
         if ([] === $this->originalLevels) {
             return $this;
