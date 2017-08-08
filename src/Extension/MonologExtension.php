@@ -26,6 +26,6 @@ class MonologExtension extends AbstractFrameworkExtension
      */
     public function getCompilerPasses(): array
     {
-        return [new MonologLoggerCompilerPass(), new MonologHandlerCompilerPass()];
+        return [[new MonologLoggerCompilerPass()], [new MonologHandlerCompilerPass()]];
     }
 }
