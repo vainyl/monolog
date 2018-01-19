@@ -58,6 +58,7 @@ class MonologLoggerCompilerPass extends AbstractCompilerPass
                 $newDefinition = new DefinitionDecorator('monolog.abstract');
                 $newDefinition->setTags($loggerDefinition->getTags());
                 $newDefinition->setArguments([new Reference('monolog.instance.' . $channel)]);
+                $newDefinition->setMethodCalls($loggerDefinition->getMethodCalls());
                 $container->setDefinition($loggerId, $newDefinition);
             }
         }
