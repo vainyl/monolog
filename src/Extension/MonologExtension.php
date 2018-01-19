@@ -28,4 +28,12 @@ class MonologExtension extends AbstractFrameworkExtension
     {
         return [[new MonologLoggerCompilerPass()], [new MonologHandlerCompilerPass()]];
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getAlias(): string
+    {
+        return 'vainyl_monolog';
+    }
 }
